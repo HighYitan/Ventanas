@@ -5,15 +5,17 @@ public class Ventanas {
     /*String titulo;*/
     static int hola = FlowLayout.CENTER;
     public static void main(String[] args) {
-        Ventana1 v1 = new Ventana1();
+        Contenedor c = new Contenedor();
+        c.setVisible(true);
+        //Ventana1 v1 = new Ventana1();
         /*v1.setAlignment(hola);*/
-        v1.setVisible(true);
+        //v1.setVisible(true);
     }
    
     /*public JFrame(){
         
-    }
-    public JFrame(String titulo){
+    }*/
+    /*public JFrame(String titulo){
         this.titulo = titulo;
     }*/
 }
