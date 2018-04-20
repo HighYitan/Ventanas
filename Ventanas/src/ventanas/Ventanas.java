@@ -2,16 +2,16 @@ package ventanas;
 import java.awt.*;
 import javax.swing.*;
 public class Ventanas {
-    /*String titulo;*/
-    static int hola = FlowLayout.CENTER;
     public static void main(String[] args) {
-        Contenedor c = new Contenedor();
-        c.setVisible(true);
+        ventanaPrincipal();
         //Ventana1 v1 = new Ventana1();
         /*v1.setAlignment(hola);*/
         //v1.setVisible(true);
     }
-   
+    public static void ventanaPrincipal(){
+        Contenedor c = new Contenedor();
+        c.setVisible(true);
+    }
     /*public JFrame(){
         
     }*/
