@@ -4,7 +4,8 @@ import javax.swing.*;
 
 public class Contenedor extends JFrame {
     public Contenedor(){
-        super("Contenedor de basura");
+        super("wGetGUI v1.20 | You are using GNU Wget 1.9 beta - 1.7 "
+                + "is minimum.");
         setSize(1920, 1080);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         Container contenedor = getContentPane();
@@ -266,7 +267,7 @@ public class Contenedor extends JFrame {
         gridCaja1.setLayout(gridbag1);
         box1.add(gridCaja1, restriccion1);
       
-        restriccion.ipady = 100;
+        //restriccion.ipady = 100;
         restriccion.insets = new Insets(10,10,10,10);
         restriccion.fill = GridBagConstraints.HORIZONTAL;
         restriccion.gridwidth = 3;
@@ -289,7 +290,7 @@ public class Contenedor extends JFrame {
         box2.add(gridCaja2, restriccion2);
         
         restriccion.gridwidth = 1;
-        restriccion.gridheight = 2;
+        restriccion.gridheight = 3;
         restriccion.gridx = 3;
         restriccion.gridy = 0;
         restriccion.fill = GridBagConstraints.BOTH;
@@ -309,7 +310,8 @@ public class Contenedor extends JFrame {
         restriccion.insets = new Insets(10,10,10,10);
         restriccion.gridwidth = 1;
         restriccion.gridheight = 1;
-        restriccion.fill = GridBagConstraints.HORIZONTAL;
+        restriccion.fill = GridBagConstraints.BOTH;
+        restriccion.gridheight = 2;
         restriccion.weightx = 0.5;
         restriccion.weighty = 10.0;
         restriccion.gridx = 0;
@@ -328,8 +330,11 @@ public class Contenedor extends JFrame {
         gridCaja4.setLayout(gridbag4);
         box4.add(gridCaja4, restriccion4);
         
+        restriccion.fill = GridBagConstraints.BOTH;
+        restriccion.weightx = 0.9;
         restriccion.gridx = 1;
         restriccion.gridy = 1;
+        restriccion.gridheight = 1;
         
         tab2.add(box4, restriccion);
         
@@ -342,11 +347,28 @@ public class Contenedor extends JFrame {
         GridBagConstraints restriccion5 = new GridBagConstraints();
         gridCaja5.setLayout(gridbag5);
         box5.add(gridCaja5, restriccion5);
-        //restriccion.weighty = 0.5;
+        restriccion.weightx = 0.5;
         restriccion.gridx = 2;
         restriccion.gridy = 1;
         
         tab2.add(box5, restriccion);
+        
+        JPanel box6 = new JPanel();
+        box6.setLayout(new BoxLayout(box6, BoxLayout.PAGE_AXIS));
+        box6.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
+        
+        JPanel gridCaja6 = new JPanel();
+        GridBagLayout gridbag6 = new GridBagLayout();
+        GridBagConstraints restriccion6 = new GridBagConstraints();
+        gridCaja6.setLayout(gridbag6);
+        box6.add(gridCaja6, restriccion6);
+        //restriccion.weighty = 0.5;
+        restriccion.gridx = 1;
+        restriccion.gridy = 2;
+        restriccion.gridwidth = 2;
+        
+        gridCaja6.setBackground(Color.gray);
+        tab2.add(box6, restriccion);
         
         //Creación de elementos de la primera caja
         JLabel label1 = new JLabel("Hosts");
@@ -359,25 +381,27 @@ public class Contenedor extends JFrame {
         restriccion1.weightx = 0.1;
         restriccion1.weighty = 0.5;
         restriccion1.anchor = GridBagConstraints.PAGE_START;
-        restriccion1.insets = new Insets(10,10,10,10);
+        restriccion1.insets = new Insets(0,10,10,10);
         gridCaja1.add(label1, restriccion1);
-        restriccion1.insets = new Insets(30,10,10,10);
+        restriccion1.insets = new Insets(20,10,10,10);
         gridCaja1.add(check1, restriccion1);
         String allow = "<html></body><b>Allow<br>List -></b></body></html>";
         JCheckBox check2 = new JCheckBox(allow);
-        restriccion1.insets = new Insets(50,20,10,10);
+        restriccion1.insets = new Insets(40,20,10,10);
         gridCaja1.add(check2, restriccion1);
         
         String reject = "<html></body><b>Reject<br>List -></b></body></html>";
         JCheckBox check3 = new JCheckBox(reject);
         restriccion1.gridx = 0;
         restriccion1.gridy = 1;
-        restriccion1.insets = new Insets(10,10,10,10);
+        restriccion1.insets = new Insets(0,20,45,10);
         gridCaja1.add(check3, restriccion1);
         
         JTextArea textoArea1 = new JTextArea();
         restriccion1.fill = GridBagConstraints.BOTH;
-        restriccion1.insets = new Insets(10,0,10,10);
+        restriccion1.insets = new Insets(5,0,5,10);
+        restriccion1.weighty = 0.0;
+        restriccion1.weightx = 0.5;
         restriccion1.gridx = 1;
         restriccion1.gridy = 0; 
         gridCaja1.add(textoArea1, restriccion1);
@@ -388,9 +412,10 @@ public class Contenedor extends JFrame {
         gridCaja1.add(rueda1, restriccion1);
         
         JTextArea textoArea2 = new JTextArea();
+        restriccion1.weighty = 3.5;
+        restriccion1.weightx = 0.5;
         restriccion1.gridx = 1;
         restriccion1.gridy = 1; 
-        restriccion1.fill = GridBagConstraints.BOTH;
         gridCaja1.add(textoArea2, restriccion1);
         
         JScrollPane rueda2 = new JScrollPane(textoArea2);
@@ -399,8 +424,8 @@ public class Contenedor extends JFrame {
         gridCaja1.add(rueda2, restriccion1);
         
         JButton boton1 = new JButton("Clear");
-        restriccion1.ipady = 40;
-        restriccion1.insets = new Insets(50,20,10,20);
+        restriccion1.ipady = 20;
+        restriccion1.insets = new Insets(20,20,10,20);
         restriccion1.fill = GridBagConstraints.HORIZONTAL;
         restriccion1.gridwidth = 1;
         restriccion1.weightx = 0.0;
@@ -412,7 +437,7 @@ public class Contenedor extends JFrame {
         
         JButton boton2 = new JButton("Clear");
 
-        restriccion1.insets = new Insets(50,20,10,20);
+        restriccion1.insets = new Insets(20,20,10,20);
         restriccion1.fill = GridBagConstraints.HORIZONTAL;
         restriccion1.gridwidth = 1;
         restriccion1.weightx = 0.0;
@@ -422,12 +447,396 @@ public class Contenedor extends JFrame {
         restriccion1.anchor = GridBagConstraints.PAGE_START;
         gridCaja1.add(boton2, restriccion1);
         
+        //Creación de elementos de la segunda caja
+        JLabel label2 = new JLabel("Retrieval Options");
+        String deeper = "Only go deeper (-np)";
+        JCheckBox check4 = new JCheckBox(deeper);
+        check4.setSelected(true);
+        restriccion2.fill = GridBagConstraints.HORIZONTAL;
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 0;
+        restriccion2.gridwidth = 1;
+        restriccion2.weightx = 0.5;
+        restriccion2.weighty = 0.5;
+        restriccion2.anchor = GridBagConstraints.PAGE_START;
+        restriccion2.insets = new Insets(10,10,10,10);
+        gridCaja2.add(label2, restriccion2);
+        restriccion2.insets = new Insets(30,10,10,10);
+        gridCaja2.add(check4, restriccion2);
         
+        String noClobber = "No clobber (-nc)";
+        JCheckBox check5 = new JCheckBox(noClobber);
+        check5.setSelected(true);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 1;
+        restriccion2.insets = new Insets(0,10,10,10);
+        gridCaja2.add(check5, restriccion2);
+        
+        String time = "Timestamping (-N)";
+        JCheckBox check6 = new JCheckBox(time);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 2;
+        gridCaja2.add(check6, restriccion2);
+        
+        JLabel label3 = new JLabel("Quota (-Q):");
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 3;
+        gridCaja2.add(label3, restriccion2);
+        
+        JTextField kilobytes = new JTextField("0");
+        restriccion2.gridx = 1;
+        restriccion2.gridy = 3;
+        gridCaja2.add(kilobytes, restriccion2);
+        
+        JLabel label4 = new JLabel("(kB)");
+        restriccion2.gridx = 2;
+        restriccion2.gridy = 3;
+        gridCaja2.add(label4, restriccion2);
+        
+        String continueFile = "Continue file download (-c)";
+        JCheckBox check7 = new JCheckBox(continueFile);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 4;
+        gridCaja2.add(check7, restriccion2);
+        
+        String html = "add HTML suffix (-E)";
+        JCheckBox check8 = new JCheckBox(html);
+        check8.setSelected(true);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 5;
+        gridCaja2.add(check8, restriccion2);
+        
+        String noDirectories = "No directories (-nd)";
+        JCheckBox check9 = new JCheckBox(noDirectories);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 6;
+        gridCaja2.add(check9, restriccion2);
+        
+        String forceDirectories = "Force directories (-x)";
+        JCheckBox check10 = new JCheckBox(forceDirectories);
+        check10.setSelected(true);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 7;
+        gridCaja2.add(check10, restriccion2);
+        
+        String customDir = "Save to custom dir (-P):";
+        JCheckBox check11 = new JCheckBox(customDir);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 8;
+        gridCaja2.add(check11, restriccion2);
+        JTextField dir = new JTextField();
+        restriccion2.insets = new Insets(30,10,10,10);
+        gridCaja2.add(dir, restriccion2);
+        
+        String recursive = "<html><body><b>Recursive (-r)<br>with Depth (-l)"
+                + "</b></body></html>";
+        JCheckBox check12 = new JCheckBox(recursive);
+        check12.setSelected(true);
+        restriccion2.insets = new Insets(0,10,10,10);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 9;
+        gridCaja2.add(check12, restriccion2);
+        
+        JTextField depth = new JTextField("0");
+        restriccion2.insets = new Insets(10,10,10,10);
+        restriccion2.gridx = 1;
+        restriccion2.gridy = 9;
+        gridCaja2.add(depth, restriccion2);
+        
+        String inline = "<html><body><b>Download with inline<br>objects (-p)"
+                + "</b></body></html>";
+        JCheckBox check13 = new JCheckBox(inline);
+        check13.setSelected(true);
+        restriccion2.insets = new Insets(0,10,10,10);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 10;
+        gridCaja2.add(check13, restriccion2);
+        
+        String convert = "Convert links (-k)";
+        JCheckBox check14 = new JCheckBox(convert);
+        check14.setSelected(true);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 11;
+        gridCaja2.add(check14, restriccion2);
+        
+        String mirror = "Mirror site (-m)";
+        JCheckBox check15 = new JCheckBox(mirror);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 12;
+        gridCaja2.add(check15, restriccion2);
+        
+        String clear = "Clear Server Cache";
+        JCheckBox check16 = new JCheckBox(clear);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 13;
+        gridCaja2.add(check16, restriccion2);
+        
+        String checkFiles = "Check for files(--spider)";
+        JCheckBox check17 = new JCheckBox(checkFiles);
+        restriccion2.gridx = 0;
+        restriccion2.gridy = 14;
+        gridCaja2.add(check17, restriccion2);
+        
+        //Creación de elementos de la tercera caja
+        JLabel label5 = new JLabel("Accept/Reject");
+        restriccion3.gridx = 0;
+        restriccion3.gridy = 0;
+        restriccion3.fill = GridBagConstraints.HORIZONTAL;
+        restriccion3.gridwidth = 1;
+        restriccion3.weightx = 0.5;
+        restriccion3.weighty = 0.5;
+        restriccion3.anchor = GridBagConstraints.PAGE_START;
+        restriccion3.insets = new Insets(0,10,0,10);
+        gridCaja3.add(label5, restriccion3);
+        
+        String accept = "Accept:";
+        JRadioButton radio1 = new JRadioButton(accept);
+        radio1.setSelected(true);
+        restriccion3.gridx = 0;
+        restriccion3.gridy = 1;
+        gridCaja3.add(radio1, restriccion3);
+        
+        String rejected = "Reject:";
+        JRadioButton radio2 = new JRadioButton(rejected);
+        restriccion3.gridx = 1;
+        restriccion3.gridy = 1;
+        gridCaja3.add(radio2, restriccion3);
+        
+        String htm = "htm(l)";
+        JCheckBox check18 = new JCheckBox(htm);
+        check18.setSelected(true);
+        check18.setEnabled(false);
+        restriccion3.gridx = 0;
+        restriccion3.gridy = 2;
+        gridCaja3.add(check18, restriccion3);
+        
+        String gif = "gif";
+        JCheckBox check19 = new JCheckBox(gif);
+        check19.setSelected(true);
+        check19.setEnabled(false);
+        restriccion3.gridx = 1;
+        restriccion3.gridy = 2;
+        gridCaja3.add(check19, restriccion3);
+        
+        String jpg = "jpg";
+        JCheckBox check20 = new JCheckBox(jpg);
+        check20.setSelected(true);
+        check20.setEnabled(false);
+        restriccion3.gridx = 0;
+        restriccion3.gridy = 3;
+        gridCaja3.add(check20, restriccion3);
+        
+        String txt = "txt";
+        JCheckBox check21 = new JCheckBox(txt);
+        check21.setSelected(true);
+        check21.setEnabled(false);
+        restriccion3.gridx = 1;
+        restriccion3.gridy = 3;
+        gridCaja3.add(check21, restriccion3);
+        
+        String zip = "zip";
+        JCheckBox check22 = new JCheckBox(zip);
+        check22.setSelected(true);
+        check22.setEnabled(false);
+        restriccion3.gridx = 0;
+        restriccion3.gridy = 4;
+        gridCaja3.add(check22, restriccion3);
+        
+        String exe = "exe";
+        JCheckBox check23 = new JCheckBox(exe);
+        check23.setSelected(true);
+        check23.setEnabled(false);
+        restriccion3.gridx = 1;
+        restriccion3.gridy = 4;
+        gridCaja3.add(check23, restriccion3);
+        
+        String doc = "doc";
+        JCheckBox check24 = new JCheckBox(doc);
+        check24.setSelected(true);
+        check24.setEnabled(false);
+        restriccion3.gridx = 0;
+        restriccion3.gridy = 5;
+        gridCaja3.add(check24, restriccion3);
+        
+        String all = "All";
+        JCheckBox check25 = new JCheckBox(all);
+        check25.setSelected(true);
+        restriccion3.gridx = 1;
+        restriccion3.gridy = 5;
+        gridCaja3.add(check25, restriccion3);
+        
+        JTextArea textoArea3 = new JTextArea();
+        restriccion3.fill = GridBagConstraints.BOTH;
+        restriccion3.insets = new Insets(0,10,10,10);
+        restriccion3.gridx = 0;
+        restriccion3.gridy = 6; 
+        restriccion3.weighty = 1.5;
+        restriccion3.gridheight = 2;
+        gridCaja3.add(textoArea3, restriccion3);
+        
+        JScrollPane rueda3 = new JScrollPane(textoArea3);
+        rueda3.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        gridCaja3.add(rueda3, restriccion3);
+        
+        JLabel label6 = new JLabel("<html><body><b>Custom<br>List"
+                + "</b></body></html>");
+        restriccion3.gridx = 1;
+        restriccion3.gridy = 6;
+        restriccion3.gridheight = 1;
+        restriccion3.fill = GridBagConstraints.HORIZONTAL;
+        restriccion3.weighty = 0.5;
+        gridCaja3.add(label6, restriccion3);
+        
+        JButton boton3 = new JButton("Clear");
+
+        restriccion3.gridx = 1;
+        restriccion3.gridy = 7;
+        gridCaja3.add(boton3, restriccion3);
+        
+        //Creación de elementos de la cuarta caja
+        JLabel label7 = new JLabel("Accept/Reject");
+        restriccion4.gridx = 0;
+        restriccion4.gridy = 0;
+        restriccion4.fill = GridBagConstraints.HORIZONTAL;
+        restriccion4.gridwidth = 1;
+        restriccion4.weightx = 0.5;
+        restriccion4.weighty = 0.5;
+        restriccion4.anchor = GridBagConstraints.PAGE_START;
+        restriccion4.insets = new Insets(0,10,0,10);
+        gridCaja4.add(label7, restriccion4);
+        
+        JLabel label8 = new JLabel("Additional Parameters:");
+        restriccion4.gridx = 0;
+        restriccion4.gridy = 1;
+        gridCaja4.add(label8, restriccion4);
+        
+        JTextField parametres = new JTextField();
+        restriccion4.gridx = 0;
+        restriccion4.gridy = 2;
+        gridCaja4.add(parametres, restriccion4);
+        
+        String likeBrowser = "Act like a browser";
+        JCheckBox check26 = new JCheckBox(likeBrowser);
+        restriccion4.gridx = 0;
+        restriccion4.gridy = 3;
+        gridCaja4.add(check26, restriccion4);
+        
+        String robots = "Ignore robots.txt";
+        JCheckBox check27 = new JCheckBox(robots);
+        restriccion4.gridx = 0;
+        restriccion4.gridy = 4;
+        gridCaja4.add(check27, restriccion4);
+        
+        JLabel label9 = new JLabel("Retries:");
+        restriccion4.gridx = 0;
+        restriccion4.gridy = 5;
+        gridCaja4.add(label9, restriccion4);
+        
+        JTextField retries = new JTextField("10");
+        restriccion4.gridx = 1;
+        restriccion4.gridy = 5;
+        restriccion4.weightx = 3.0;
+        gridCaja4.add(retries, restriccion4);
+        
+        JButton boton4 = new JButton("Configure Proxy");
+        restriccion4.gridx = 0;
+        restriccion4.gridy = 6;
+        restriccion4.gridwidth = 2;
+        gridCaja4.add(boton4, restriccion4);
+        
+        //Creación de elementos de la quinta caja
+        JLabel label10 = new JLabel("Running & Logging");
+        restriccion5.gridx = 0;
+        restriccion5.gridy = 0;
+        restriccion5.fill = GridBagConstraints.HORIZONTAL;
+        restriccion5.gridwidth = 1;
+        restriccion5.weightx = 0.5;
+        restriccion5.weighty = 0.5;
+        restriccion5.anchor = GridBagConstraints.PAGE_START;
+        restriccion5.insets = new Insets(0,10,0,10);
+        gridCaja5.add(label10, restriccion5);
+        
+        String background = "Go to background (-b)";
+        JCheckBox check28 = new JCheckBox(background);
+        restriccion5.gridx = 0;
+        restriccion5.gridy = 1;
+        gridCaja5.add(check28, restriccion5);
+        
+        String noInfo = "No info (-q)";
+        JCheckBox check29 = new JCheckBox(noInfo);
+        restriccion5.gridx = 0;
+        restriccion5.gridy = 2;
+        gridCaja5.add(check29, restriccion5);
+        
+        String allInfo = "All info (-v)";
+        JCheckBox check30 = new JCheckBox(allInfo);
+        restriccion5.gridx = 0;
+        restriccion5.gridy = 3;
+        gridCaja5.add(check30, restriccion5);
+        
+        String someInfo = "Some info (-nv)";
+        JCheckBox check31 = new JCheckBox(someInfo);
+        check31.setSelected(true);
+        restriccion5.gridx = 0;
+        restriccion5.gridy = 4;
+        gridCaja5.add(check31, restriccion5);
+        
+        String append = "Append to logfile (-a)";
+        JCheckBox check32 = new JCheckBox(append);
+        restriccion5.gridx = 0;
+        restriccion5.gridy = 5;
+        gridCaja5.add(check32, restriccion5);
+        
+        String overwrite = "Overwrite Logfile (-o)";
+        JCheckBox check33 = new JCheckBox(overwrite);
+        restriccion5.gridx = 0;
+        restriccion5.gridy = 6;
+        gridCaja5.add(check33, restriccion5);
+        
+        JLabel label11 = new JLabel("Logfile:");
+        restriccion5.gridx = 0;
+        restriccion5.gridy = 7;
+        gridCaja5.add(label11, restriccion5);
+        
+        JTextField logfile = new JTextField("default.log");
+        restriccion5.gridx = 1;
+        restriccion5.gridy = 7;
+        gridCaja5.add(logfile, restriccion5);
+        
+        //Creación de elementos de la sexta(Última) caja (Caja invisible)
+        JButton boton5 = new JButton("Add to wGetStart.bat");
+        restriccion6.ipady = 20;
+        restriccion6.gridx = 0;
+        restriccion6.gridy = 0;
+        restriccion6.fill = GridBagConstraints.HORIZONTAL;
+        restriccion6.anchor = GridBagConstraints.PAGE_START;
+        restriccion6.insets = new Insets(3,10,3,10);
+        restriccion6.gridwidth = 1;
+        restriccion6.weightx = 0.5;
+        restriccion6.weighty = 0.5;
+        gridCaja6.add(boton5, restriccion6);
+        
+        JButton boton6 = new JButton("Empty wGetStart.bat");
+        restriccion6.gridx = 1;
+        restriccion6.gridy = 0;
+        gridCaja6.add(boton6, restriccion6);
+        
+        JButton boton7 = new JButton("Save settings");
+        restriccion6.gridx = 0;
+        restriccion6.gridy = 1;
+        gridCaja6.add(boton7, restriccion6);
+        
+        JButton boton8 = new JButton("Load settings");
+        restriccion6.gridx = 1;
+        restriccion6.gridy = 1;
+        gridCaja6.add(boton8, restriccion6);
+        
+        
+
         
         
         tab2.setBackground(Color.gray);
         tabulaciones.addTab("Standard", tab2);
-        
     }
     public void tab3(JTabbedPane tabulaciones){
         //tabulaciones.setPreferredSize(new Dimension(1000, 200));

@@ -9,10 +9,4 @@ public class Ventanas {
         Contenedor contenedor = new Contenedor();
         contenedor.setVisible(true);
     }
-    /*public JFrame(){
-        
-    }*/
-    /*public JFrame(String titulo){
-        this.titulo = titulo;
-    }*/
 }
