@@ -6,6 +6,9 @@ public class Contenedor extends JFrame {
     public Contenedor(){
         super("wGetGUI v1.20 | You are using GNU Wget 1.9 beta - 1.7 "
                 + "is minimum.");
+        mostrarContenedor();
+    }
+    public void mostrarContenedor(){
         setSize(1920, 1080);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
         Container contenedor = getContentPane();
